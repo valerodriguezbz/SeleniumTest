@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class TestLogin(unittest.TestCase):
     def test_login_success(self):
+        # Call the test base
         login_test = Login()
         login_test.login()
         driver = login_test.driver
