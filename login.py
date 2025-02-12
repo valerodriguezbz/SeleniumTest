@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 
 class Login:
     def __init__(self):
@@ -20,7 +19,6 @@ class Login:
 
         login_button = self.driver.find_element(By.ID, "login-button")
         login_button.click()
-        time.sleep(3)
 
     def tearDown(self):
         self.driver.quit()

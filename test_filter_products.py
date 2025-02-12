@@ -37,7 +37,6 @@ class TestProductsFilter(unittest.TestCase):
         # This will tell if the filter is correct the test will pass or not.
         True if (list_names==sorted(list_names)) else False
 
-
     # After the login, test the filters (Name Z-a)
     def test_filter_name_desc(self):
         list_names=[]

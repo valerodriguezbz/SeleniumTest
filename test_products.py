@@ -5,7 +5,6 @@ from login import Login
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
 class TestProducts(unittest.TestCase):
     # Login first
@@ -13,7 +12,6 @@ class TestProducts(unittest.TestCase):
         login_test = Login()
         login_test.login()
         self.driver = login_test.driver
-        time.sleep(3)
 
     # After the login, test if the products are displayed
     def test_products_visibility(self):
@@ -26,7 +24,6 @@ class TestProducts(unittest.TestCase):
         )
         products = products_conatiner.find_elements(By.CLASS_NAME, 'inventory_item')
         self.assertGreater(len(products), 0, "No hay productos")
-        time.sleep(2)
 
     # After the login, test if the product detail is displayed
     def test_product_details(self):
@@ -36,9 +33,7 @@ class TestProducts(unittest.TestCase):
             )
         )
         product.click()
-        time.sleep(2)
         self.driver.back()
-        time.sleep(2)
 
     def tearDown(self):
         self.driver.quit()
